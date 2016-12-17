@@ -1,0 +1,109 @@
+.site-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  color: $color__text-heading;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .05em;
+  margin: 0 0 .62429507697em;
+}
+
+.entry-title,
+.site-title {
+  text-transform: uppercase;
+}
+
+.site-title {
+  margin-bottom: .30794614765em;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.entry-content {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.424em;
+  }
+}
+
+.site-description {
+  font-size: .875em;
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.site-title,
+h1 {
+  @include font-size(1.602);
+}
+
+h2 {
+  @include font-size(1.5);
+}
+
+.comment-reply-title,
+.comments-title,
+.widget-title,
+.widgettitle,
+h3 {
+  @include font-size(1.424);
+}
+
+.entry-inner .entry-title,
+.front-page-content .entry-content,
+h4 {
+  @include font-size(1.265625);
+}
+
+.footer-widgets-wrapper .widget-title,
+.front-page-blog .entry-inner .entry-title,
+h5 {
+  @include font-size(1.125);
+}
+
+h6 {
+  @include font-size(1);
+}
+@include screen($breakpoint) {
+  h1 {
+    @include font-size(1.802);
+  }
+
+  h2 {
+    @include font-size(1.602);
+  }
+
+  .comment-reply-title,
+  .comments-title,
+  .widget-title,
+  .widgettitle,
+  h3 {
+    @include font-size(1.5);
+  }
+
+  .entry-inner .entry-title,
+  h4 {
+    @include font-size(1.424);
+  }
+
+  .footer-widgets-wrapper .widget-title,
+  .front-page-blog .entry-inner .entry-title,
+  h5 {
+    @include font-size(1.265625);
+  }
+
+  h6 {
+    @include font-size(1.125);
+  }
+};

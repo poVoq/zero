@@ -1,0 +1,28 @@
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  position: relative;
+  /* Align more nicely with capital letters */
+  top: -0.0625em;
+}
+
+.icon-wrapper {
+  background-color: $color__background-body;
+  border-radius: 2px;
+  display: block;
+  float: left;
+  margin-right: .38974434312em;
+  width: 1.75em;
+  height: 1.75em;
+
+  & > .icon {
+    left: .5em;
+    top: .5em;
+    width: .75em;
+    height: .75em;
+    vertical-align: top;
+  }
+}

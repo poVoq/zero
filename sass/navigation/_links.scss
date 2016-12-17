@@ -1,0 +1,61 @@
+a {
+  color: $color__link;
+  transition: all .25s ease-in-out;
+  text-decoration: none;
+
+  &:visited {
+    color: $color__link-visited;
+  }
+
+  .footer-widgets-wrapper &,
+  .site-info & {
+    color: $color__link-faded;
+  }
+
+  .site-info & {
+    font-style: italic;
+  }
+
+  .entry-content &,
+  .entry-meta &,
+  .entry-summary &,
+  .site-info &,
+  .taxonomy-description &,
+  .widget & {
+    border-bottom: 2px solid $color__accent;
+  }
+
+  .entry-meta & {
+    border-bottom-color: $color__background-body;
+  }
+
+  &.button,
+  .entry-content .gallery-icon &,
+  .footer-widgets-wrapper & {
+    border-bottom: none;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color__link-hover;
+
+    .footer-widgets-wrapper &,
+    .site-info & {
+      color: $color__white;
+    }
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+  .entry-title & {
+    text-decoration: none;
+  }
+}

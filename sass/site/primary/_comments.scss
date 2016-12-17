@@ -1,0 +1,151 @@
+.bypostauthor {
+  display: block;
+}
+
+.comments-area {
+  padding-top: 3em;
+  padding-bottom: 1.5em;
+}
+
+.comment-respond {
+  .comment-list + &,
+  .comment-navigation + & {
+    padding-top: 1.5em;
+  }
+}
+
+%comments-title {
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.25;
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.comments-title {
+  @extend %comments-title;
+  margin-bottom: 1.266em;
+}
+
+.comment-reply-title {
+  @extend %comments-title;
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0;
+
+  .pingback,
+  .trackback,
+  article {
+    padding: 1.802em 0;
+  }
+
+  .children {
+    list-style: none;
+    margin: 0;
+  }
+}
+
+.comment-author {
+  margin-bottom: .25em;
+
+  .avatar {
+    border-radius: 4px;
+    float: left;
+    height: 60px;
+    margin-top: -0.151900653em;
+    margin-right: 1em;
+    position: relative;
+    width: 60px;
+  }
+
+  .says {
+    display: none;
+  }
+}
+
+%comments_font-size-0.88888888 {
+  font-size: .88888888em;
+}
+
+.comment-metadata {
+  @extend %comments_font-size-0.88888888;
+  margin-bottom: 1.602em;
+  @at-root {
+    %comments_edit-link {
+      display: inline-block;
+      margin-top: 0;
+
+      &:before {
+        content: "\002f";
+        display: inline-block;
+        opacity: .7;
+        padding: 0 .538461538em;
+      }
+    }
+  }
+
+  .edit-link {
+    @extend %comments_edit-link;
+  }
+}
+
+.pingback .edit-link {
+  @extend %comments_font-size-0.88888888;
+  @extend %comments_edit-link;
+}
+
+ol.comment-list ol.children {
+  padding-left: 3%;
+}
+
+.comment-reply-link {
+  display: inline-block;
+  font-size: .888888888888em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  .icon {
+    margin-left: .24331547469em;
+  }
+}
+
+.comment-form {
+  padding-top: 1.75em;
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-size: .875rem;
+    letter-spacing: .076923077em;
+    text-transform: uppercase;
+  }
+}
+
+.comment-form {
+  .comment-list & {
+    padding-bottom: 1.75em;
+  }
+}
+
+.comment-awaiting-moderation,
+.comment-notes,
+.form-allowed-tags,
+.logged-in-as,
+.no-comments {
+  font-style: italic;
+  margin-bottom: 1.75em;
+  text-align: center;
+}
+
+.comment-navigation + .no-comments {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.comment-content a {
+  word-wrap: break-word;
+}

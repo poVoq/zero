@@ -2,15 +2,15 @@
 /**
  * Custom template tags for this theme.
  *
- * Eventually, sanse of the functionality here could be replaced by core features.
+ * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Sanse
+ * @package zero
  */
 
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function sanse_posted_on() {
+function zero_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -24,12 +24,12 @@ function sanse_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'sanse' ),
+		esc_html_x( 'Posted on %s', 'post date', 'zero' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'sanse' ),
+		esc_html_x( 'by %s', 'post author', 'zero' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -54,7 +54,7 @@ function sanse_posted_on() {
  * @param   array   $args
  * @return  string
  */
-function sanse_get_post_terms( $args = array() ) {
+function zero_get_post_terms( $args = array() ) {
 
 	$html = '';
 
@@ -66,7 +66,7 @@ function sanse_get_post_terms( $args = array() ) {
 		'after'      => '',
 		'items_wrap' => '<span %s>%s</span>',
 		/* Translators: Separates tags, categories, etc. when displaying a post. */
-		'sep'        => '<span class="screen-reader-text">' . esc_html_x( ', ', 'taxonomy terms separator', 'sanse' ) . '</span>'
+		'sep'        => '<span class="screen-reader-text">' . esc_html_x( ', ', 'taxonomy terms separator', 'zero' ) . '</span>'
 	);
 
 	$args = wp_parse_args( $args, $defaults );
@@ -90,8 +90,8 @@ function sanse_get_post_terms( $args = array() ) {
  * @param  array   $args
  * @return void
  */
-function sanse_post_terms( $args = array() ) {
-	echo sanse_get_post_terms( $args );
+function zero_post_terms( $args = array() ) {
+	echo zero_get_post_terms( $args );
 }
 
 /**
@@ -100,7 +100,7 @@ function sanse_post_terms( $args = array() ) {
  * Does nothing if the custom logo is not available.
  *
  */
-function sanse_the_custom_logo() {
+function zero_the_custom_logo() {
 
 	if ( function_exists( 'the_custom_logo' ) ) {
 		the_custom_logo();
@@ -120,16 +120,16 @@ function sanse_the_custom_logo() {
  * }
  * @return string SVG markup.
  */
-function sanse_get_svg( $args = array() ) {
+function zero_get_svg( $args = array() ) {
 
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
-		return esc_html__( 'Please define default parameters in the form of an array.', 'sanse' );
+		return esc_html__( 'Please define default parameters in the form of an array.', 'zero' );
 	}
 
 	// Define an icon.
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return esc_html__( 'Please define an SVG icon filename.', 'sanse' );
+		return esc_html__( 'Please define an SVG icon filename.', 'zero' );
 	}
 
 	// Set defaults.
@@ -177,8 +177,8 @@ function sanse_get_svg( $args = array() ) {
  *
  * @param  array  $args  Parameters needed to display an SVG.
  */
-function sanse_do_svg( $args = array() ) {
-	echo sanse_get_svg( $args );
+function zero_do_svg( $args = array() ) {
+	echo zero_get_svg( $args );
 }
 
 /**
@@ -186,14 +186,12 @@ function sanse_do_svg( $args = array() ) {
  *
  * Use WordPress native the_posts_pagination function.
  */
-function sanse_posts_pagination() {
-
+function zero_posts_pagination() {
 	the_posts_pagination( array(
-		'prev_text'          => '<span class="screen-reader-text">' . esc_html__( 'Previous page', 'sanse' ) . '</span>' . sanse_get_svg( array( 'icon' => 'arrow-circle-left' ) ),
-		'next_text'          => '<span class="screen-reader-text">' . esc_html__( 'Next page', 'sanse' ). '</span>' . sanse_get_svg( array( 'icon' => 'arrow-circle-right' ) ),
-		'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'sanse' ) . ' </span>',
+		'prev_text'          => '<span class="screen-reader-text">' . esc_html__( 'Previous page', 'zero' ) . '</span>' . zero_get_svg( array( 'icon' => 'arrow-circle-left' ) ),
+		'next_text'          => '<span class="screen-reader-text">' . esc_html__( 'Next page', 'zero' ). '</span>' . zero_get_svg( array( 'icon' => 'arrow-circle-right' ) ),
+		'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'zero' ) . ' </span>',
 	) );
-
 }
 
 /**
@@ -201,8 +199,8 @@ function sanse_posts_pagination() {
  *
  * @return bool
  */
-function sanse_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'sanse_categories' ) ) ) {
+function zero_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'zero_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -214,27 +212,27 @@ function sanse_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'sanse_categories', $all_the_cool_cats );
+		set_transient( 'zero_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so sanse_categorized_blog should return true.
+		// This blog has more than 1 category so zero_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so sanse_categorized_blog should return false.
+		// This blog has only 1 category so zero_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in sanse_categorized_blog.
+ * Flush out the transients used in zero_categorized_blog.
  */
-function sanse_category_transient_flusher() {
+function zero_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'sanse_categories' );
+	delete_transient( 'zero_categories' );
 }
-add_action( 'edit_category', 'sanse_category_transient_flusher' );
-add_action( 'save_post',     'sanse_category_transient_flusher' );
+add_action( 'edit_category', 'zero_category_transient_flusher' );
+add_action( 'save_post',     'zero_category_transient_flusher' );

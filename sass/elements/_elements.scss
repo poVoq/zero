@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+body {
+  background: $color__background-body;
+  /* Fallback for when there is no custom background color defined. */
+}
+
+blockquote,
+q {
+  quotes: '' '';
+
+  &:after,
+  &:before {
+    content: '';
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+blockquote {
+  font-style: italic;
+
+  margin: 0 0 1.333333333em;
+  padding-left: 1.125em;
+
+  border-left: 4px solid $color__black;
+  @include font-size(1.125);
+}
+
+hr {
+  height: 1px;
+  margin-bottom: 1.5em;
+
+  border: 0;
+  background-color: $color__background-hr;
+}
+@import 'lists';
+
+img {
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  height: auto;
+  /* Adhere to container width. */
+}
+
+figure {
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */
+}
+@import 'tables';
+
+.site-content::-moz-selection,
+.site-content::selection {
+  background-color: $color__accent;
+}
+
+.site-content::selection,
+content::-moz-selection {
+  background-color: $color__accent;
+}

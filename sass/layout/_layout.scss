@@ -1,0 +1,138 @@
+%margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%low-level-width {
+  max-width: $site__top-max-width;
+}
+
+%mid-level-width {
+  max-width: $site__middle-max-width;
+}
+
+%high-level-width {
+  max-width: $site__bottom-max-width;
+}
+
+.wrapper {
+  @extend %margin-center;
+  @extend %low-level-width;
+}
+
+.site-main {
+  @extend %margin-center;
+  @extend %mid-level-width;
+  padding-bottom: 1.5em;
+  margin-bottom: 3em;
+}
+
+.entry-header {
+  text-align: center;
+}
+
+.entry-inner {
+  .entry-header {
+    text-align: left;
+  }
+}
+
+.comment-respond,
+.comments-area,
+.entry-content,
+.entry-footer,
+.entry-inner .entry-header,
+.entry-inner .entry-meta,
+.entry-summary,
+.footer-widgets-1 .footer-widgets-wrapper .wrapper,
+.widget-inner-wrapper {
+  @extend %margin-center;
+  @extend %high-level-width;
+}
+
+.content-area {
+  @extend %margin-center;
+  @extend %low-level-width;
+  background-color: #fff;
+  border-top: .38974434312em solid $color__black;
+  padding: 7.5% 1em 0;
+  margin-top: -350px;
+}
+
+.hero {
+  background-color: $color__accent;
+  min-height: 350px;
+  @include screen(1260px) {
+    .custom-header-image & {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 400px;
+    }
+  }
+}
+
+.site-header {
+  background-color: $color__accent;
+  padding: 1em;
+  text-align: center;
+}
+
+.site-footer {
+  background-color: $color__black;
+  color: $color__white;
+  padding: 3em 1.5em;
+}
+
+.site-info {
+  text-align: center;
+}
+
+.grid-wrapper {
+  &,
+  & > .hentry,
+  & > .hentry > .entry-inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+      width: 100%;
+    }
+  }
+
+  & > .hentry > .entry-inner {
+    flex-direction: column;
+  }
+
+  & > .hentry {
+    padding-bottom: 1.5em;
+  }
+}
+
+.entry-inner > .entry-meta {
+  margin-top: auto;
+}
+@include screen($breakpoint) {
+  .grid-wrapper {
+    margin-left: -1.5em;
+  }
+
+  .grid-wrapper > .hentry {
+    padding-left: 1.5em;
+    width: 50%;
+  }
+
+  .widget-area {
+    .footer-widgets-wrapper & {
+      padding-left: 1.5em;
+
+      .footer-widgets-2 & {
+        width: 50%;
+      }
+
+      .footer-widgets-3 & {
+        width: 33.3333333333%;
+      }
+    }
+  }
+}

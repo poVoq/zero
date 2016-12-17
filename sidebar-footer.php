@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Sanse
+ * @package zero
  */
 
 if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) && ! is_active_sidebar( 'footer-3' ) ) {
@@ -33,7 +33,7 @@ if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) && !
 				<?php dynamic_sidebar( 'footer-3' ); ?>
 			</aside><!-- .widget-area -->
 		<?php endif; ?>
-		
+
 		</div><!-- .grid-wrapper -->
 	</div><!-- .wrapper -->
 </div><!-- .footer-widgets-wrapper -->

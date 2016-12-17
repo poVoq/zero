@@ -4,67 +4,62 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Sanse
+ * @package zero
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses sanse_header_style()
+ * @uses zero_header_style()
  */
-function sanse_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'sanse_custom_header_args', array(
-		'default-image'      => '',
-		'default-text-color' => '000000',
-		'width'              => 1920,
-		'height'             => 400,
-		'flex-height'        => true,
-		'wp-head-callback'   => 'sanse_header_style',
+function zero_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'zero_custom_header_args', array(
+		'default-image'          => '',
+		'default-text-color'     => '000000',
+		'width'                  => 1920,
+		'height'                 => 400,
+		'flex-height'            => true,
+		'wp-head-callback'       => 'zero_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'sanse_custom_header_setup', 15 );
+add_action( 'after_setup_theme', 'zero_custom_header_setup', 15 );
 
+if ( ! function_exists( 'zero_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see sanse_custom_header_setup().
+ * @see zero_custom_header_setup().
  */
-function sanse_header_style() {
-
-	// Header text color.
-	$header_color = esc_attr( get_header_textcolor() );
-
-	// Header image.
-	$header_image = esc_url( get_header_image() );
+function zero_header_style() {
 
 	// Start header styles.
-	$style = '';
+	$header_style = '';
+
+	// Header text color
+	$header_text_color = esc_attr( get_header_textcolor() );
+
+	// Header Image
+	$header_image = esc_url( get_header_image() );
 
 	// Header image height.
-	$header_height = get_custom_header()->height;
+	$header_image_height = get_custom_header()->height;
 
 	// Header image width.
-	$header_width = get_custom_header()->width;
+	$header_image_width = get_custom_header()->width;
 
 	// When to show header image.
-	$min_width = absint( apply_filters( 'sanse_header_bg_show', 1260 ) );
+	$min_width = absint( apply_filters( 'zero_header_bg_show', 1260 ) );
 
-	if ( ! empty( $header_image ) ) {
-		$style .= "@media screen and (min-width: {$min_width}px) { body.custom-header-image .hero { background-image: url({$header_image}) } }";
-	}
-
-	/* Site title styles. */
 	if ( display_header_text() ) {
-		$style .= ".site-title a, .site-description { color: #{$header_color} }";
+		$header_style .= ".site-title a, .site-description { color: #{$header_text_color}; }";
+	} else {
+		$header_style .= ".site-title, .site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); }";
 	}
-
-	if ( ! display_header_text() ) {
-		$style .= ".site-title, .site-description { clip: rect(1px, 1px, 1px, 1px); position: absolute; }";
+	if ( ! empty( $header_image ) ) {
+		$header_style .= "@media screen and (min-width: {$min_width}px) { body.custom-header-image .hero { background-image: url({$header_image}); } }";
 	}
-
-	/* Echo styles if it's not empty. */
-	if ( ! empty( $style ) ) {
-		echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
+	if ( ! empty( $header_style ) ) {
+		echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $header_style ) . '</style>' . "\n";
 	}
-
 }
+endif;

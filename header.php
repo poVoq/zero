@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Sanse
+ * @package zero
  */
 
 ?><!DOCTYPE html>
@@ -22,41 +22,38 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'sanse' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'zero' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
-			
+
+			<?php get_template_part( 'menus/menu', 'primary' ); ?>
+
 			<div class="site-branding">
 				<?php
-				// Custom logo.
-				sanse_the_custom_logo();
-				
-				// Site Title.
+        // Custom logo.
+        zero_the_custom_logo();
+
+        // Site Title.
 				if ( is_front_page() && is_home() ) : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 				endif;
-				
-				// Site Tagline.
+
+        // Site Tagline.
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) : ?>
 					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php
-					endif;
-				?>
+				endif; ?>
 			</div><!-- .site-branding -->
 
-			<?php
-				get_template_part( 'menus/menu', 'primary' ); // Loads the menus/menu-primary.php template.
-			?>
-		
 		</div><!-- .wrapper -->
 	</header><!-- #masthead -->
-	
-	<div class="hero" id="hero">
-	</div><!-- .hero -->
+
+	<div class="hero">
+  </div><!-- .hero -->
 
 	<div id="content" class="site-content">

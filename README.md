@@ -1,6 +1,8 @@
-# Sanse
+# zero
 
-Let your content shine with Sanse theme.
+Let your content shine with zero theme.
+
+zero is a fork of [Sanse](https://github.com/samikeijonen/sanse).
 
 ## Copyright and License
 
@@ -13,37 +15,10 @@ Note that icons (only some of the icons) are turned into SVG images using tool c
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-&copy; 2016 [Sami Keijonen](https://foxland.fi/).
+&copy; 2016 [Munif Tanjim](http://muniftanjim.com).
 
 ## Changelog
 
-### Version 1.2.2 - December 100, 2016
+### Version 0.1.0 - December 17, 2016
 
-* Fix escaping function in read more text, icon output, and header color.
-* Remove rtl.css and readme.txt files. They are not used at the moment.
-* Fix correct FontAwesome license.
-
-### Version 1.2.1 - August 9, 2016
-
-* Fix Front Page widget layout issue.
-* Add tags and categories after post.
-* Add flexible width and height for logo.
-
-### Version 1.2.0 - August 5, 2016
-
-* Add Front Page template.
-* Add Front Page template widget area.
-* Add support for logo.
-
-* Move custom header styles in the style.css.
-
-### Version 1.1.0 - August 1, 2016
-
-* Add Footer Widgets area.
-* SVG images are now loaded in the footer via `wp_footer` hook.
-* Add editor styles.
-* Switch to system fonts like in WordPress Core.
-
-### Version 1.0.0 - July 13, 2016
-
-* Everything's new!
+* Massive refactor from Sanse.

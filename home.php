@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Sanse
+ * @package zero
  */
 
 get_header(); ?>
@@ -19,13 +19,12 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>
+			<?php endif; ?>
 
+			<div class="grid-wrapper">
 			<?php
-			endif;
-
-			/* Start the Loop */
-			echo '<div class="grid-wrapper">';
-				while ( have_posts() ) : the_post();
+        /* Start the Loop */
+        while ( have_posts() ) : the_post();
 
 					/*
 					* Include the Post-Format-specific template for the content.
@@ -34,12 +33,12 @@ get_header(); ?>
 					*/
 					get_template_part( 'template-parts/content', ( post_type_supports( get_post_type(), 'post-formats' ) ? get_post_format() : get_post_type() ) );
 
-				endwhile;
-			echo '</div><!-- .grid-wrapper -->';
+				endwhile; ?>
+			</div><!-- .grid-wrapper -->
 
-			// Previous/next page navigation. Function is located in inc/template-tags.php.
-			sanse_posts_pagination();
-
+      <?php
+			  // Previous/next page navigation. Function is located in inc/template-tags.php.
+			  zero_posts_pagination();
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );

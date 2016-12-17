@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Sanse
+ * @package zero
  */
 
 get_header(); ?>
@@ -17,13 +17,13 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
-			// Previous/next post navigation.
-			the_post_navigation( array(
-				'next_text' => '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next', 'sanse' ) . sanse_get_svg( array( 'icon' => 'arrow-circle-right' ) ) . '</span> ' .
-					'<span class="screen-reader-text">' . esc_html__( 'Next post:', 'sanse' ) . '</span> ' .
+      // Previous/next post navigation.
+      the_post_navigation( array(
+				'next_text' => '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next', 'zero' ) . zero_get_svg( array( 'icon' => 'arrow-circle-right' ) ) . '</span> ' .
+					'<span class="screen-reader-text">' . esc_html__( 'Next post:', 'zero' ) . '</span> ' .
 					'<span class="post-title">%title</span>',
-				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . sanse_get_svg( array( 'icon' => 'arrow-circle-left' ) ) . esc_html__( 'Previous', 'sanse' ) . '</span> ' .
-					'<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'sanse' ) . '</span> ' .
+				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . zero_get_svg( array( 'icon' => 'arrow-circle-left' ) ) . esc_html__( 'Previous', 'zero' ) . '</span> ' .
+					'<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'zero' ) . '</span> ' .
 					'<span class="post-title">%title</span>',
 			) );
 

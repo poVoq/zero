@@ -1,0 +1,45 @@
+%button {
+  background: $color__button-background;
+  border: 0;
+  color: $color__button-text;
+  @include font-size(0.88888888888);
+  line-height: 1;
+  padding: 1em 1.424em;
+  text-transform: uppercase;
+  transition: all .2s ease-in-out;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background: $color__button-text;
+    color: $color__button-background;
+  }
+
+  &:focus {
+    outline: 1px dotted;
+    outline-offset: -2px;
+  }
+}
+
+a.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @extend %button;
+  @at-root {
+    &,
+    label {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+a.button {
+  display: block;
+}
+
+.comment-form input[type="submit"] {
+  margin-bottom: 1.802em;
+}

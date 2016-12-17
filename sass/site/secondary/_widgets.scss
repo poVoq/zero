@@ -1,0 +1,44 @@
+.widget {
+  margin: 0 0 1.5em;
+
+  /* Make sure select elements fit in widgets. */
+  select {
+    max-width: 100%;
+  }
+}
+
+.footer-widgets-wrapper,
+.front-page-widgets-wrapper {
+  & ol,
+  & ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  & li {
+    padding-bottom: .19224926395em;
+  }
+}
+
+.footer-widgets-wrapper {
+  &:after {
+    @extend %seperator;
+    margin-top: 1.5em;
+    margin-bottom: 3em;
+  }
+
+  .widget-title {
+    color: $color__accent;
+  }
+}
+
+.front-page-widgets-wrapper {
+  padding-bottom: 1.5em;
+}
+
+.front-page-widget-area > .widget:first-of-type {
+  background-color: $color__background-body;
+  padding: 1.5em;
+  margin-bottom: 3em;
+  text-align: center;
+}
