@@ -27,6 +27,11 @@ get_header(); ?>
 					'<span class="post-title">%title</span>',
 			) );
 
+      // Jetpack Related Posts
+      if ( class_exists( 'Jetpack_RelatedPosts' ) ) :
+        echo do_shortcode( '[jetpack-related-posts]' );
+      endif;
+
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();

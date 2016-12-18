@@ -39,3 +39,27 @@ function zero_infinite_scroll_render() {
 		endif;
 	}
 }
+
+/*
+ * Remove Related Posts from default position
+ */
+function jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'jetpackme_remove_rp', 20 );
+
+/*
+ * Custom headline for Related Posts
+ */
+function jetpackme_rp_headline( $headline ) {
+    $headline = sprintf(
+        '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>',
+        esc_html__( 'Check These Out!', 'zero')
+    );
+    return $headline;
+}
+add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_rp_headline' );
