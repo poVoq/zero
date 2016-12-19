@@ -1,10 +1,10 @@
 /*!
-Theme Name: zero
+Theme Name: Zero
 Theme URI:
 Author: MunifTanjim
 Author URI: http://muniftanjim.com/
 Description: Zero is a super fast theme where your content is shining brighter than ever.
-Version: 0.1.0
+Version: 0.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zero
@@ -714,7 +714,11 @@ input[name="post_password"] {
   margin-bottom: .62429507697em;
 }
 
-.error404 .search-form {
+.error-404 {
+  text-align: center;
+}
+
+.error-404 .search-form {
   margin-bottom: 1.5em;
 }
 
@@ -888,6 +892,7 @@ a:active, a:hover {
 /* Social Menu */
 .menu-social {
   padding-bottom: 1.5em;
+  text-align: center;
 }
 
 .menu-social ul {
@@ -908,7 +913,6 @@ a:active, a:hover {
 
 .menu-social a {
   background-color: #ffcd00;
-  border-bottom: none;
   border-radius: 4px;
   color: #000;
   display: block;
@@ -918,7 +922,6 @@ a:active, a:hover {
 
 .menu-social a:active, .menu-social a:focus, .menu-social a:hover {
   background-color: #fff;
-  color: #000;
 }
 
 .menu-social a:focus {
@@ -1152,7 +1155,7 @@ body.page .entry-header:after {
 /*--------------------------------------------------------------
 9 Layout
 --------------------------------------------------------------*/
-.wrapper, .site-main, .comment-respond,
+.masthead-wrap, .site-main, .comment-respond,
 .comments-area,
 .entry-content,
 .entry-footer,
@@ -1160,12 +1163,12 @@ body.page .entry-header:after {
 .entry-inner .entry-meta,
 .entry-summary,
 .footer-widgets-1 .footer-widgets-wrapper .wrapper,
-.widget-inner-wrapper, .content-area {
+.widget-inner-wrapper, .content-wrap {
   margin-left: auto;
   margin-right: auto;
 }
 
-.wrapper, .content-area {
+.masthead-wrap, .content-wrap {
   max-width: 1220px;
 }
 
@@ -1198,7 +1201,7 @@ body.page .entry-header:after {
   text-align: left;
 }
 
-.content-area {
+.content-wrap {
   background-color: #fff;
   border-top: 0.38974em solid #000;
   padding: 7.5% 1em 0;

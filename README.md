@@ -1,8 +1,8 @@
-# zero
+# Zero
 
-Let your content shine with zero theme.
+Let your content shine with Zero theme.
 
-zero is a fork of [Sanse](https://github.com/samikeijonen/sanse).
+Zero is a fork of [Sanse](https://github.com/samikeijonen/sanse).
 
 ## Copyright and License
 
@@ -18,6 +18,12 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 &copy; 2016 [Munif Tanjim](http://muniftanjim.com).
 
 ## Changelog
+
+### Version 0.2.0 - December 20, 2016
+
+* Another major refactor
+* Used newer APIs (WordPress 4.7+ required)
+* Improved localization
 
 ### Version 0.1.0 - December 17, 2016
 

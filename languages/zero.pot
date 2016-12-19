@@ -1,216 +1,256 @@
-# Copyright (C) 2016 zero
-# This file is distributed under the same license as the zero package.
+# Copyright (C) 2016 MunifTanjim
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: zero\n"
-"Report-Msgid-Bugs-To: https://foxland.fi/contact/\n"
+"Project-Id-Version: Zero 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/zero\n"
+"POT-Creation-Date: 2016-12-19 21:38:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
-"Language-Team: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: 404.php:17
+#: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:21
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+#: 404.php:22
+msgid "Doesn&rsquo;t look like anything is here. Maybe try a search?"
 msgstr ""
 
-#: 404.php:33
-msgid "Most Used Categories"
-msgstr ""
-
-#: 404.php:51
-msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
-#: comments.php:31
+#. translators: %s: post title
+#: comments.php:35
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid "One Thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:38
+msgctxt "comments title"
+msgid "%1$s Thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:44
-msgid "Reply"
-msgstr ""
-
-#: comments.php:50
+#: comments.php:55 comments.php:73
 msgid "%s Older comments"
 msgstr ""
 
-#: comments.php:51
+#: comments.php:56 comments.php:74
 msgid "Newer comments %s"
 msgstr ""
 
-#: comments.php:60
+#: comments.php:66
+msgid "Reply"
+msgstr ""
+
+#: comments.php:85
 msgid "Comments are closed."
 msgstr ""
 
-#: entry-footer.php:25
-msgid "Categories:"
-msgstr ""
-
-#: entry-footer.php:27
-msgid "Tags:"
-msgstr ""
-
-#: footer.php:26
+#: components/footer/site-info.php:12
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer.php:26
+#: components/footer/site-info.php:12
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:28
-msgid "Theme: %1$s by %2$s."
+#: components/menus/menu-primary.php:14
+msgid "Menu"
 msgstr ""
 
-#: functions.php:39
+#: components/menus/menu-social.php:14
+msgid "Social Menu"
+msgstr ""
+
+#: components/others/entry-footer.php:16
+msgid "Categories:"
+msgstr ""
+
+#: components/others/entry-footer.php:17
+msgid "Tags:"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: components/page/content-page.php:34
+msgid "Edit %s"
+msgstr ""
+
+#: components/page-front.php:55
+msgid "Blog"
+msgstr ""
+
+#: components/post/content-none.php:16
+msgid "Doesn&rsquo;t look like anything is here."
+msgstr ""
+
+#: components/post/content-none.php:24
+msgid "Ready to publush your first post? %s"
+msgstr ""
+
+#: components/post/content-none.php:27
+msgctxt "new post link"
+msgid "Get started here"
+msgstr ""
+
+#: components/post/content-none.php:35
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: functions.php:48
 msgid "Primary"
 msgstr ""
 
-#: functions.php:40
-msgid "Social Links"
-msgstr ""
-
-#: functions.php:99
-msgid "Footer widget area 1"
-msgstr ""
-
-#: functions.php:101
-msgid "Add widgets here for footer widget area 1."
+#: functions.php:49
+msgid "Social"
 msgstr ""
 
 #: functions.php:109
-msgid "Footer widget area 2"
+msgid "Footer widget area 1"
 msgstr ""
 
 #: functions.php:111
-msgid "Add widgets here for footer widget area 2."
+msgid "Add widgets here for footer widget area 1."
 msgstr ""
 
 #: functions.php:119
-msgid "Footer widget area 3"
+msgid "Footer widget area 2"
 msgstr ""
 
 #: functions.php:121
-msgid "Add widgets here for footer widget area 3."
+msgid "Add widgets here for footer widget area 2."
 msgstr ""
 
 #: functions.php:129
-msgid "Front Page template widget area"
+msgid "Footer widget area 3"
 msgstr ""
 
 #: functions.php:131
+msgid "Add widgets here for footer widget area 3."
+msgstr ""
+
+#: functions.php:139
+msgid "Front Page template widget area"
+msgstr ""
+
+#: functions.php:141
 msgid "Add widgets here for Front Page template."
 msgstr ""
 
-#: functions.php:257
-msgid "Read more %s"
-msgstr ""
-
-#: header.php:25
+#: header.php:26
 msgid "Skip to content"
 msgstr ""
 
-#: inc/template-tags.php:27
-msgctxt "post date"
-msgid "Posted on %s"
+#: inc/back-compat.php:38 inc/back-compat.php:50 inc/back-compat.php:65
+msgid ""
+"Zero requires at least WordPress version 4.7. You are running version %s. "
+"Please upgrade and try again."
 msgstr ""
 
-#: inc/template-tags.php:32
+#: inc/icon-functions.php:39
+msgid "Please define default parameters in the form of an array."
+msgstr ""
+
+#: inc/icon-functions.php:44
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: inc/jetpack.php:61
+msgid "Check These Out!"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: inc/template-functions.php:65
+msgid "Continue reading %s"
+msgstr ""
+
+#: inc/template-tags.php:18
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:69
+#: inc/template-tags.php:44
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#. Translators: Separates tags, categories, etc. when displaying a post.
+#: inc/template-tags.php:78
 msgctxt "taxonomy terms separator"
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:127
-msgid "Please define default parameters in the form of an array."
-msgstr ""
-
-#: inc/template-tags.php:132
-msgid "Please define an SVG icon filename."
-msgstr ""
-
-#: inc/template-tags.php:192
+#: inc/template-tags.php:126
 msgid "Previous page"
 msgstr ""
 
-#: inc/template-tags.php:193
+#: inc/template-tags.php:127
 msgid "Next page"
 msgstr ""
 
-#: inc/template-tags.php:194, template-parts/content.php:32
+#: inc/template-tags.php:128 inc/template-tags.php:143
 msgid "Page"
 msgstr ""
 
-#: menus/menu-primary.php:21
-msgid "Primary Menu"
-msgstr ""
-
-#: menus/menu-primary.php:23
-msgid "Menu"
-msgstr ""
-
-#: menus/menu-social.php:21
-msgid "Social Menu"
-msgstr ""
-
-#: search.php:19
-msgid "Search Results for: %s"
-msgstr ""
-
-#: single.php:22
-msgid "Next"
-msgstr ""
-
-#: single.php:23
-msgid "Next post:"
-msgstr ""
-
-#: single.php:25
-msgid "Previous"
-msgstr ""
-
-#: single.php:26
-msgid "Previous post:"
-msgstr ""
-
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/content-none.php:21
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content-none.php:25
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: template-parts/content-none.php:31
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: template-parts/content-page.php:23, template-parts/content.php:28
+#: inc/template-tags.php:139
 msgid "Pages:"
 msgstr ""
 
-#: templates/front-page.php:46
-msgid "Blog"
+#: index.php:23
+msgid "Posts"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:18
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:51
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: single.php:26
+msgid "Next"
+msgstr ""
+
+#: single.php:26
+msgid "Next post:"
+msgstr ""
+
+#: single.php:27
+msgid "Previous"
+msgstr ""
+
+#: single.php:27
+msgid "Previous post:"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Zero"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Zero is a super fast theme where your content is shining brighter than ever."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "MunifTanjim"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://muniftanjim.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Front Page"
 msgstr ""

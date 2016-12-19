@@ -4,7 +4,8 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package zero
+ * @package Zero
+ * @since 0.1.0
  */
 
 /**
@@ -24,7 +25,6 @@ function zero_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'zero_custom_header_setup', 15 );
 
-if ( ! function_exists( 'zero_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
@@ -33,7 +33,7 @@ if ( ! function_exists( 'zero_header_style' ) ) :
 function zero_header_style() {
 
 	// Start header styles.
-	$header_style = '';
+	$style = '';
 
 	// Header text color
 	$header_text_color = esc_attr( get_header_textcolor() );
@@ -50,16 +50,18 @@ function zero_header_style() {
 	// When to show header image.
 	$min_width = absint( apply_filters( 'zero_header_bg_show', 1260 ) );
 
-	if ( display_header_text() ) {
-		$header_style .= ".site-title a, .site-description { color: #{$header_text_color}; }";
-	} else {
-		$header_style .= ".site-title, .site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); }";
-	}
-	if ( ! empty( $header_image ) ) {
-		$header_style .= "@media screen and (min-width: {$min_width}px) { body.custom-header-image .hero { background-image: url({$header_image}); } }";
-	}
-	if ( ! empty( $header_style ) ) {
-		echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $header_style ) . '</style>' . "\n";
-	}
+	if ( display_header_text() ) :
+		$style .= ".site-title a, .site-description { color: #{$header_text_color}; }";
+	else :
+		$style .= '.site-title, .site-description { clip: rect(1px, 1px, 1px, 1px); position: absolute; }';
+	endif;
+
+	if ( ! empty( $header_image ) ) :
+		$style .= "@media screen and (min-width: {$min_width}px) { body.custom-header-image .hero { background-image: url({$header_image}); } }";
+	endif;
+
+	/* Echo styles if it's not empty. */
+	if ( ! empty( $style ) ) :
+		echo "\n" . '<style type="text/css" id="custom-header-css">' . esc_html( trim( $style ) ) . '</style>' . "\n";
+	endif;
 }
-endif;

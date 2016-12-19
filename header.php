@@ -6,7 +6,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package zero
+ * @package Zero
+ * @since 0.1.0
+ * @version 0.2.0
  */
 
 ?><!DOCTYPE html>
@@ -15,7 +17,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
 </head>
@@ -25,35 +26,17 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'zero' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="wrapper">
+		<div class="masthead-wrap">
 
-			<?php get_template_part( 'menus/menu', 'primary' ); ?>
+			<?php get_template_part( 'components/menus/menu', 'primary' ); ?>
 
-			<div class="site-branding">
-				<?php
-        // Custom logo.
-        zero_the_custom_logo();
+			<?php get_template_part( 'components/header/site', 'branding' ); ?>
 
-        // Site Title.
-				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
-
-        // Site Tagline.
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
-			</div><!-- .site-branding -->
-
-		</div><!-- .wrapper -->
+		</div><!-- .masthead-wrap -->
 	</header><!-- #masthead -->
 
 	<div class="hero">
-  </div><!-- .hero -->
+	</div><!-- .hero -->
 
 	<div id="content" class="site-content">
+		<div class="content-wrap">

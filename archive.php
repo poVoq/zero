@@ -4,47 +4,55 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package zero
+ * @package Zero
+ * @since 0.1.0
+ * @version 0.2.0
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php if ( have_posts() ) : ?>
+<header class="page-header">
+	<?php
+		the_archive_title( '<h1 class="page-title">', '</h1>' );
+		the_archive_description( '<div class="taxonomy-description">', '</div>' );
+	?>
+</header><!-- .page-header -->
+<?php endif; ?>
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+
+	<?php if ( have_posts() ) : ?>
+
+		<div class="grid-wrapper">
 
 		<?php
-		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', ( post_type_supports( get_post_type(), 'post-formats' ) ? get_post_format() : get_post_type() ) );
+			/*
+			 * Include the Post-Format-specific template for the content.
+  		 * If you want to override this in a child theme, then include a file
+  		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+  		 */
+			get_template_part( 'components/post/content', 'excerpt' );
 
-			endwhile;
+		  endwhile;
+		?>
 
-			zero_posts_pagination();
+		</div>
 
-		else :
+		<?php zero_posts_pagination(); ?>
 
-			get_template_part( 'template-parts/content', 'none' );
+	<?php else : ?>
 
-		endif; ?>
+		<?php get_template_part( 'components/post/content', 'none' ); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<?php endif; ?>
 
-<?php
-get_footer();
+	</main><!-- #main -->
+</div><!-- #primary -->
+
+<?php get_footer();

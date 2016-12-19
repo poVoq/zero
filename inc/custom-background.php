@@ -2,7 +2,8 @@
 /**
  * Custom background feature
  *
- * @package zero
+ * @package Zero
+ * @since 0.1.0
  */
 
 /**

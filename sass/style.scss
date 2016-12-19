@@ -1,10 +1,10 @@
 /*!
-Theme Name: zero
+Theme Name: Zero
 Theme URI:
 Author: MunifTanjim
 Author URI: http://muniftanjim.com/
 Description: Zero is a super fast theme where your content is shining brighter than ever.
-Version: 0.1.0
+Version: 0.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zero
@@ -22,6 +22,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -48,50 +49,62 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
+
 /*--------------------------------------------------------------
 0 Normalize
 --------------------------------------------------------------*/
 @import "normalize";
+
 /*--------------------------------------------------------------
 1 Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
+
 /*--------------------------------------------------------------
 2 Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
+
 /*--------------------------------------------------------------
 3 Forms
 --------------------------------------------------------------*/
 @import "forms/forms";
+
 /*--------------------------------------------------------------
 4 Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
+
 /*--------------------------------------------------------------
 5 Accessibility
 --------------------------------------------------------------*/
 @import "modules/accessibility";
+
 /*--------------------------------------------------------------
 6 Alignments
 --------------------------------------------------------------*/
 @import "modules/alignments";
+
 /*--------------------------------------------------------------
 7 Clearings
 --------------------------------------------------------------*/
 @import "modules/clearings";
+
 /*--------------------------------------------------------------
 8 Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";
+
 /*--------------------------------------------------------------
 9 Layout
 --------------------------------------------------------------*/
 @import "layout/layout";
+
 /*--------------------------------------------------------------
 10 Content
 --------------------------------------------------------------*/
 @import "site/site";
+
 /*--------------------------------------------------------------
 11 Media
 --------------------------------------------------------------*/

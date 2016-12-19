@@ -2,11 +2,14 @@
 /**
  * Entry footer.
  *
- * @package zero
+ * @package Zero
+ * @since 0.1.0
+ * @version 0.1.0
  */
+
 ?>
 
-<?php if ( 'post' == get_post_type() ) : ?>
+<?php if ( 'post' === get_post_type() ) : ?>
 
 	<footer class="entry-footer clear">
 		<?php

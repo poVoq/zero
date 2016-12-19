@@ -1,22 +1,25 @@
 <?php
 /**
- * The area containing the footer widget areas.
+ * Displays footer widgets
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package zero
+ * @package Zero
+ * @since 0.2.0
+ * @version 0.2.0
  */
 
-if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) && ! is_active_sidebar( 'footer-3' ) ) {
-	return;
-}
+?>
+
+<?php
+if ( is_active_sidebar( 'footer-1' ) ||
+		 is_active_sidebar( 'footer-2' ) ||
+		 is_active_sidebar( 'footer-3' ) ) :
 ?>
 
 <div class="footer-widgets-wrapper">
 	<div class="wrapper">
 		<div class="grid-wrapper">
 
-		<?php if( is_active_sidebar( 'footer-1' ) ) : ?>
+		<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
 			<aside id="footer-area-1" class="footer-area-1 widget-area" role="complementary">
 				<?php dynamic_sidebar( 'footer-1' ); ?>
 			</aside><!-- .widget-area -->
@@ -37,3 +40,5 @@ if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) && !
 		</div><!-- .grid-wrapper -->
 	</div><!-- .wrapper -->
 </div><!-- .footer-widgets-wrapper -->
+
+<?php endif;

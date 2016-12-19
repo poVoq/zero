@@ -17,10 +17,10 @@ $color__text-input-focus: #111;
 $color__link: $color__black;
 $color__link-visited: $color__black;
 $color__link-faded: #ccc;
-$color__link-hover: #404040;
+$color__link-hover: $color__text-main;
 
 $color__border-input: #ccc;
-$color__border-input-focus: #000;
+$color__border-input-focus: $color__black;
 $color__border-abbr: #666;
 $color__border-table: #ccc;
 

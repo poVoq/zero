@@ -1,11 +1,20 @@
 <?php
 /**
- * zero functions and definitions.
+ * Zero functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package zero
+ * @package Zero
+ * @since 0.1.0
  */
+
+/**
+ * Zero only works in WordPress 4.7 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+	return;
+}
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -21,7 +30,7 @@ function zero_setup() {
 	 * If you're building a theme based on zero, use a find and replace
 	 * to change 'zero' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'zero', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'zero', get_parent_theme_file_path( '/languages' ) );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -34,19 +43,11 @@ function zero_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in two location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'zero' ),
 		'social'  => esc_html__( 'Social', 'zero' ),
 	) );
-
-	// Add support for logo.
-	add_theme_support( 'custom-logo', apply_filters( 'zero_custom_logo_arguments', array(
-		'height'      => 90,
-	  'width'       => 90,
-		'flex-height' => true,
-		'flex-width'  => true,
-	) ) );
 
 	/*
 	 * Add support for selective refresh.
@@ -67,6 +68,14 @@ function zero_setup() {
 		'caption',
 	) );
 
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', apply_filters( 'zero_custom_logo_arguments', array(
+		'height'      => 90,
+		'width'       => 90,
+		'flex-height' => true,
+		'flex-width'  => true,
+	) ) );
+
 	/*
  	* This theme styles the visual editor to resemble the theme style,
  	* specifically font, colors, icons, and column width.
@@ -83,7 +92,10 @@ add_action( 'after_setup_theme', 'zero_setup' );
  * @global int $content_width
  */
 function zero_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'zero_content_width', 640 );
+
+	$content_width = 640;
+
+	$GLOBALS['content_width'] = apply_filters( 'zero_content_width', $content_width );
 }
 add_action( 'after_setup_theme', 'zero_content_width', 0 );
 
@@ -140,6 +152,7 @@ add_action( 'widgets_init', 'zero_widgets_init' );
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  *
+ * @since Zero 0.1.0
  */
 function zero_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
@@ -147,25 +160,35 @@ function zero_javascript_detection() {
 add_action( 'wp_head', 'zero_javascript_detection', 0 );
 
 /**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function zero_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", esc_html( get_bloginfo( 'pingback_url' ) ) );
+	}
+}
+add_action( 'wp_head', 'zero_pingback_header' );
+
+
+/**
  * Enqueue scripts and styles.
  */
 function zero_scripts() {
-
 	// Get '.min' suffix.
 	$suffix = zero_get_min_suffix();
 
 	// Add parent theme styles if using child theme.
 	if ( is_child_theme() ) {
-		wp_enqueue_style( 'zero-parent-style', trailingslashit( get_template_directory_uri() ) . 'style' . $suffix . '.css', array(), null );
+		wp_enqueue_style( 'zero-parent-style', get_theme_file_uri( '/style' . $suffix . '.css' ), array(), null );
 	}
 
-	// Add theme styles.
+	// Theme stylesheet.
 	wp_enqueue_style( 'zero-style', get_stylesheet_uri() );
 
 	// Add theme scripts.
-	wp_enqueue_script( 'zero-navigation', get_template_directory_uri() . '/assets/js/navigation' . $suffix . '.js', array(), '20160715', true );
+	wp_enqueue_script( 'zero-navigation', get_theme_file_uri( '/assets/js/navigation' . $suffix . '.js' ), array(), '20161220', true );
 
-	wp_enqueue_script( 'zero-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $suffix . '.js', array(), '20160715', true );
+	wp_enqueue_script( 'zero-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix' . $suffix . '.js' ), array(), '20161220', true );
 
 	// Add comments script.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -177,29 +200,34 @@ add_action( 'wp_enqueue_scripts', 'zero_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require get_parent_theme_file_path( '/inc/custom-header.php' );
 
 /**
  * Implement the Custom Background feature.
  */
-require get_template_directory() . '/inc/custom-background.php';
+require get_parent_theme_file_path( '/inc/custom-background.php' );
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_parent_theme_file_path( '/inc/template-tags.php' );
 
 /**
- * Custom functions that act independently of the theme templates.
+ * Additional features to allow styling of the templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require get_parent_theme_file_path( '/inc/template-functions.php' );
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_parent_theme_file_path( '/inc/customizer.php' );
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+require get_parent_theme_file_path( '/inc/jetpack.php' );
+
+/**
+ * SVG icons functions and filters.
+ */
+require get_parent_theme_file_path( '/inc/icon-functions.php' );

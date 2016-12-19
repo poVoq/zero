@@ -31,6 +31,9 @@ input[name="post_password"] {
   margin-bottom: .62429507697em;
 }
 
-.error404 .search-form {
-  margin-bottom: 1.5em;
+.error-404 {
+  text-align: center;
+  .search-form {
+    margin-bottom: 1.5em;
+  }
 }

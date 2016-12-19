@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package zero
+ * @package Zero
  */
 
-if ( ! is_active_sidebar( 'front-page' ) ) {
+if ( ! is_active_sidebar( 'front-page' ) ) :
 	return;
-}
+endif;
 ?>
 
 <div class="front-page-widgets-wrapper">

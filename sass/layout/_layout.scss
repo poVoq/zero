@@ -15,7 +15,7 @@
   max-width: $site__bottom-max-width;
 }
 
-.wrapper {
+.masthead-wrap {
   @extend %margin-center;
   @extend %low-level-width;
 }
@@ -50,10 +50,10 @@
   @extend %high-level-width;
 }
 
-.content-area {
+.content-wrap {
   @extend %margin-center;
   @extend %low-level-width;
-  background-color: #fff;
+  background-color: $color__white;
   border-top: .38974434312em solid $color__black;
   padding: 7.5% 1em 0;
   margin-top: -350px;
