@@ -28,9 +28,9 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="masthead-wrap">
 
-			<?php get_template_part( 'components/menus/menu', 'primary' ); ?>
-
 			<?php get_template_part( 'components/header/site', 'branding' ); ?>
+
+			<?php get_template_part( 'components/menus/menu', 'primary' ); ?>
 
 		</div><!-- .masthead-wrap -->
 	</header><!-- #masthead -->
