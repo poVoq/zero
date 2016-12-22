@@ -49,12 +49,14 @@ get_header(); ?>
 
 			<header class="page-header">
 				<?php
+					// Get blog title and url from the options.
+					$blog_title_id = get_option( 'page_for_posts' );
+					$blog_title        = ( 'page' === get_option( 'show_on_front' ) && 0 !== $blog_title_id ) ? get_the_title( absint( $blog_title_id ) ) : esc_html__( 'Blog', 'zero' );
+					$blog_url          = ( 'page' === get_option( 'show_on_front' ) && 0 !== $blog_title_id ) ? get_permalink( absint( $blog_title_id ) ) : get_bloginfo( 'url' );
 
-				// Get blog title from the options.
-				$blog_title_option = get_option( 'page_for_posts' );
-				$blog_title        = ( 'page' === get_option( 'show_on_front' ) && 0 !== $blog_title_option ) ? get_the_title( absint( $blog_title_option ) ) : esc_html__( 'Blog', 'zero' );
-
-				echo '<h2 class="page-title">' . esc_html( $blog_title ) . '</h2>';
+					printf( '<h2 class="page-title"><a href="%1$s">%2$s</a>',
+						esc_url( $blog_url ), esc_html( $blog_title )
+					);
 				?>
 			</header><!-- .page-header -->
 
