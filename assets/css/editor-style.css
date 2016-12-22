@@ -4,14 +4,14 @@
 /* Styles specific to the editor. */
 
 body#tinymce {
-	background: $color__white;
+	background: #fff;
 	border: none;
 	margin-top: 1.7em;
 	margin-left: 3%;
 	padding-right: 3%;
-	max-width: $site__bottom-max-width;
+	max-width: 620px;
 }
 
 body#tinymce a {
-    border-bottom: 2px solid $color__accent;
+    border-bottom: 2px solid #ffcd00;
 }
