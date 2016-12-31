@@ -19,6 +19,11 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 
 ## Changelog
 
+### Version 0.2.1 - December 31, 2016
+
+* Change Primary Menu position
+* Fix minor issues
+
 ### Version 0.2.0 - December 20, 2016
 
 * Another major refactor
