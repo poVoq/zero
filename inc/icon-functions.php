@@ -145,6 +145,7 @@ function zero_social_links_icons() {
 	$social_links_icons = array(
 		'codepen.io'      => 'codepen',
 		'digg.com'        => 'digg',
+		'discord.me'      => 'discord',
 		'dribbble.com'    => 'dribbble',
 		'dropbox.com'     => 'dropbox',
 		'facebook.com'    => 'facebook',
@@ -152,6 +153,7 @@ function zero_social_links_icons() {
 		'foursquare.com'  => 'foursquare',
 		'plus.google.com' => 'googleplus',
 		'github.com'      => 'github',
+		'gitlab.com'      => 'gitlab',
 		'instagram.com'   => 'instagram',
 		'linkedin.com'    => 'linkedin-alt',
 		'mailto:'         => 'mail',
@@ -163,6 +165,7 @@ function zero_social_links_icons() {
 		'skype:'          => 'skype',
 		'soundcloud.com'  => 'cloud',
 		'spotify.com'     => 'spotify',
+		'steamcommunity.com'     => 'steam-symbol',
 		'stumbleupon.com' => 'stumbleupon',
 		'tumblr.com'      => 'tumblr',
 		'twitch.tv'       => 'twitch',
