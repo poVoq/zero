@@ -144,6 +144,7 @@ function zero_social_links_icons() {
 	// Supported social links icons.
 	$social_links_icons = array(
 		'blogspot.com'    => 'blogger',
+		'joindiaspora.com' => 'diaspora',
 		'discord.me'      => 'discord',
 		'hub.docker.com'  => 'docker',
 		'dropbox.com'     => 'dropbox',
