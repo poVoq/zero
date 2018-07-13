@@ -164,6 +164,7 @@ function zero_social_links_icons() {
 		'skype.com'       => 'skype',
 		'skype:'          => 'skype',
 		'soundcloud.com'  => 'cloud',
+		'social.freegamedev.net'  => 'mastodon',
 		'spotify.com'     => 'spotify',
 		'steamcommunity.com'     => 'steam-symbol',
 		'stumbleupon.com' => 'stumbleupon',
